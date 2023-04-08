@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="shopping" skipped="0" tests="1" time="0.06" timestamp="2023-04-08 05:50:57"><testcase name="make purcharses"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+utils.DataDrivenExcel.leerExcel(DataDrivenExcel.java:31)&#13;
+stepsdefinition.purchase.camilo_want_to_navigate_into_app_advantageOnline(purchase.java:43)&#13;
+✽.camilo want to navigate into app advantageOnline 1(src/test/resources/features/shopping.feature:6)&#13;
+</system-err></testcase></testsuite>

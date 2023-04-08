@@ -1,0 +1,49 @@
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    ext{
+        serenityVersion = '2.1.4'
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:"+ serenityVersion
+        classpath "net.serenity-bdd:serenity-single-page-report:" + serenityVersion
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+dependencies {
+    testCompile 'net.serenity-bdd:serenity-core:2.1.0'
+    testCompile 'net.serenity-bdd:serenity-junit:2.1.0'
+    testCompile('junit:junit:4.12')
+    testCompile('org.assertj:assertj-core:3.11.1')
+    testCompile('org.slf4j:slf4j-simple:1.7.25')
+    testCompile('org.apache.poi:poi-ooxml:4.0.1')
+    testCompile('org.apache.poi:poi-ooxml-schemas:4.0.1')
+
+    compile 'net.serenity-bdd:serenity-core:2.1.0'
+    compile 'net.serenity-bdd:serenity-junit:2.1.0'
+    compile 'net.serenity-bdd:serenity-cucumber:1.9.51'
+    compile 'net.serenity-bdd:serenity-screenplay:2.1.0'
+    compile 'net.serenity-bdd:serenity-screenplay-webdriver:2.1.0'
+    compile 'org.apache.poi:poi-ooxml:4.0.1'
+    compile 'org.apache.poi:poi-ooxml-schemas:4.0.1'
+}
+
+tasks.withType(Test) {
+    systemProperty 'tags', System.getProperty('tags', '')
+    enableAssertions = true
+    systemProperty 'environment', System.getProperty('environment', '')
+}
+test.finalizedBy(aggregate)
+gradle.startParameter.continueOnFailure = true

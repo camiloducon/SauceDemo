@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"register","register Sucessfull","SUCCESS","2023-04-08T17:29:29.625-05:00[America/Bogota]","0.0","15.16"
+"register","login Sucessfull","SUCCESS","2023-04-08T17:35:46.497-05:00[America/Bogota]","0.0","15.13"
+"shopping","make purcharses","ERROR","2023-04-08T17:50:57.241-05:00[America/Bogota]","0.0","0.06"
